@@ -1,0 +1,159 @@
+body{
+    display: flex;
+    background-color: #000;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+button{
+    border: 0px;
+    background-color: #333;
+    width: 85px;
+    height: 85px;
+    border-radius: 35px;
+    margin:5px;
+
+
+
+    color: #AAA;
+    border: solid 2px #333;
+    font-size: 2rem;
+}
+
+button:hover{
+    border: solid 3px orange;
+}
+
+button:focus{
+   
+    outline: none;
+}
+
+button:active{
+    font-size: 1.8rem;
+}
+
+#heading{
+    color: white;
+    font-family:'Courier New', Courier, monospace;
+    text-align: center;
+    font-size: 4rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+
+#calculator{
+    display: flex;
+    flex-direction: column;
+    background-color: #111111;
+    display: flex;
+    width: 24rem;
+    height: 40rem;
+    padding: 5px;
+    border-radius: 10px;
+    box-shadow:0 0 18px #202020;
+    align-self: center;
+
+}
+
+#screen{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    height: 30%;
+    width: 95%;
+    margin-top: 10px;
+    flex:1;
+    background-color: #222;
+    border-radius: 5px;
+}
+
+#scr-top{
+
+    flex: 2;
+}
+
+#scr-bottom{
+
+    flex: 6;
+}
+
+
+.line{
+    height: 1px;
+    background-color: white;
+    margin: 10px 20px;
+}
+
+#top-bar{
+    display: flex;
+
+}
+
+#top-bar > #oprA{
+    display: flex;
+    flex: 3;
+    justify-content: center;
+
+}
+
+#oprA > #clear{
+    color: #FF3333;
+}
+
+#top-bar > #oprB{
+
+    flex: 1;
+    display: flex;
+    justify-self: flex-end;
+    justify-content: flex-start;
+}
+
+#keypad{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    flex:3;
+}
+
+#bottom-bar{
+    display: flex;
+    
+}
+
+#number-pad{
+    display: flex;
+    flex-wrap: wrap;
+    flex: 3;
+    justify-content: center;
+}
+
+#number-pad>#zero{
+    flex : 1;
+    text-align: left;
+    padding-left: 30px;
+
+}
+
+#side-keys{ 
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex:1; 
+
+}
+
+#side-keys > .operators{
+    flex:1;
+}
+
+#side-keys > #equal{
+    flex:2;
+    color: orange;
+}
+
+.operators{
+    color: orange;
+}
+
