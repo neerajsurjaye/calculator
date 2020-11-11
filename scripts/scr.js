@@ -7,6 +7,8 @@ let screen_sec = document.querySelector("#scr-top");
 let final_sum = null;
 let last_opr = null;
 
+let sub_val = 0;
+
 let operators = {"add" : '+' , "sub" : "-" , "mul" : "*" , "div" : "/" , "mod" : "%"};
 
 //math operations
@@ -67,10 +69,13 @@ function keyInput(e){
     }
     else if(e.target.className == "operators"){
         oprHandling(e.target.id);
+        
     }
     else if(e.target.id == "equal"){
         equal_handling();
     }
+
+    console.log(temp_string ,display_string ,final_sum);
     
     
 }
@@ -78,7 +83,7 @@ function keyInput(e){
 function inputNumber(e){
     temp_string += e.target.dataset.num;
     display_string += e.target.dataset.num;
-    console.log(temp_string ,display_string);
+    sub_val = 1;
     display(screen_main , temp_string);
 }
 
@@ -93,6 +98,7 @@ function clearDisplay(){
     temp_string = "";  
     final_sum = null;
     last_opr = null;
+    sub_val = 0;
 
     display(screen_main , temp_string);
     display(screen_sec , display_string);
@@ -101,17 +107,22 @@ function clearDisplay(){
 
 //operation Handling
 function oprHandling(opr){
-    if(opr == "sub" && last_opr==null){
+    if(opr == "sub" && last_opr==null && sub_val == 0){
         temp_string = "-";
+        console.log("ran");
         display_string = "-";
         display(screen_main , temp_string);
+        sub_val = 1;
+        
         return;
     }
-    
-    if (last_opr == null){
+    sub_val = 1;
+    if (last_opr == null ){
+        //console.log("ran");
         last_opr = opr;
         final_sum = parseFloat(temp_string);
         display_string += operators[opr];
+        sub_val = 1;
     }else {
         if(last_opr != "equal"){
             final_sum = operate( final_sum,parseFloat(temp_string) , operators[last_opr]);

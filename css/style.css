@@ -48,8 +48,8 @@ button:active{
     flex-direction: column;
     background-color: #111111;
     display: flex;
-    width: 24rem;
-    height: 40rem;
+    width: 25rem;
+    height: 70vh;
     padding: 5px;
     border-radius: 10px;
     box-shadow:0 0 18px #202020;
@@ -141,7 +141,7 @@ button:active{
 #number-pad{
     display: flex;
     flex-wrap: wrap;
-    flex: 3;
+    width: 290px;
     justify-content: center;
 }
 
