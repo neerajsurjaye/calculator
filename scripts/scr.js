@@ -133,7 +133,7 @@ function oprHandling(opr){
         }
     }
     if(opr == "equal"){
-        display(screen_main , final_sum);   
+        display(screen_main , final_sum.toFixed(5));   
     }
     if(opr != "equal"){
         display(screen_main ,  "");
