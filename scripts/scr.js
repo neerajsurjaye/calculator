@@ -78,7 +78,7 @@ function keyInput(e){
 function inputNumber(e){
     temp_string += e.target.dataset.num;
     display_string += e.target.dataset.num;
-    console.log(display_string);
+    console.log(temp_string ,display_string);
     display(screen_main , temp_string);
 }
 
@@ -101,7 +101,13 @@ function clearDisplay(){
 
 //operation Handling
 function oprHandling(opr){
-
+    if(opr == "sub" && last_opr==null){
+        temp_string = "-";
+        display_string = "-";
+        display(screen_main , temp_string);
+        return;
+    }
+    
     if (last_opr == null){
         last_opr = opr;
         final_sum = parseFloat(temp_string);
