@@ -1,6 +1,13 @@
-console.log(operate(17  , 8, "%"));
+let display_string = ""; //values and all operations
+let temp_string = ""; //current value displaying //curr Number
 
-//Functions
+let screen_main = document.querySelector("#scr-bottom");
+let screen_sec = document.querySelector("#scr-top");
+
+let final_sum = null;
+let last_opr = null;
+
+let operators = {"add" : '+' , "sub" : "-" , "mul" : "*" , "div" : "/" , "mod" : "%"};
 
 //math operations
 function add(paraA , paraB){
@@ -40,4 +47,88 @@ function operate(paraA , paraB , operator){
     }
 
     return out;
+}
+
+
+//Keypad 
+
+let keypad = document.querySelector("#keypad");
+keypad.addEventListener("click" , keyInput);
+
+
+function keyInput(e){
+
+    if(e.target.className == "numbers"){
+        inputNumber(e);
+    
+    }
+    else if(e.target.id == "clear"){
+        clearDisplay();
+    }
+    else if(e.target.className == "operators"){
+        oprHandling(e.target.id);
+    }
+    else if(e.target.id == "equal"){
+        equal_handling();
+    }
+    
+    
+}
+
+function inputNumber(e){
+    temp_string += e.target.dataset.num;
+    display_string += e.target.dataset.num;
+    console.log(display_string);
+    display(screen_main , temp_string);
+}
+
+
+//Screen
+function display(window , value){
+    window.textContent = value;
+}
+
+function clearDisplay(){
+    display_string = "";
+    temp_string = "";  
+    final_sum = null;
+    last_opr = null;
+
+    display(screen_main , temp_string);
+    display(screen_sec , display_string);
+}
+
+
+//operation Handling
+function oprHandling(opr){
+
+    if (last_opr == null){
+        last_opr = opr;
+        final_sum = parseFloat(temp_string);
+        display_string += operators[opr];
+    }else {
+        if(last_opr != "equal"){
+            final_sum = operate( final_sum,parseFloat(temp_string) , operators[last_opr]);
+        }
+        last_opr = opr;
+        if(opr != "equal"){
+            display_string += operators[opr];
+        }
+    }
+    if(opr == "equal"){
+        display(screen_main , final_sum);   
+    }
+    if(opr != "equal"){
+        display(screen_main ,  "");
+    }
+
+    temp_string = "";
+    display(screen_sec , display_string);
+}
+
+
+//Equals
+function equal_handling(){
+    
+
 }

@@ -1,6 +1,6 @@
 body{
     display: flex;
-    background-color: #000;
+    background-color: #010101;
     flex-direction: column;
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -70,19 +70,35 @@ button:active{
 }
 
 #scr-top{
-
+    display: flex;
     flex: 2;
+    color: white;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 10px;
+}
+
+#scr-line{
+    height: 1px;
+    background-color: #333;
+    margin:0 5%;
 }
 
 #scr-bottom{
-
+    display: flex;
     flex: 6;
+    color: white;
+    justify-content: flex-end;
+    align-items: flex-end;
+
+    padding:14px;
+    font-size: 3rem;
 }
 
 
 .line{
     height: 1px;
-    background-color: white;
+    background-color: #555;
     margin: 10px 20px;
 }
 
