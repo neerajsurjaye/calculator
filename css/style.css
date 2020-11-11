@@ -34,7 +34,7 @@ button:active{
 }
 
 #heading{
-    color: white;
+    color: #AAA;
     font-family:'Courier New', Courier, monospace;
     text-align: center;
     font-size: 4rem;
@@ -49,7 +49,7 @@ button:active{
     background-color: #111111;
     display: flex;
     width: 25rem;
-    height: 70vh;
+    height: 45rem;
     padding: 5px;
     border-radius: 10px;
     box-shadow:0 0 18px #202020;
@@ -72,7 +72,7 @@ button:active{
 #scr-top{
     display: flex;
     flex: 2;
-    color: white;
+    color: #AAA;
     align-items: center;
     justify-content: flex-end;
     padding-right: 10px;
@@ -109,7 +109,7 @@ button:active{
 
 #top-bar > #oprA{
     display: flex;
-    flex: 3;
+    width: 290px;
     justify-content: center;
 
 }
@@ -122,8 +122,10 @@ button:active{
 
     flex: 1;
     display: flex;
-    justify-self: flex-end;
-    justify-content: flex-start;
+    justify-self: center;
+    align-items: center;
+    justify-content: center;
+    
 }
 
 #keypad{
@@ -155,7 +157,7 @@ button:active{
 #side-keys{ 
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     flex:1; 
 
 }
