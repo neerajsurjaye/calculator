@@ -21,6 +21,8 @@ button{
     color: #AAA;
     border: solid 2px #333;
     font-size: 2rem;
+    border: solid 0px orange;
+    transition: all 0.05s;
 }
 
 button:hover{
@@ -55,7 +57,8 @@ button:active{
     height: 45rem;
     padding: 5px;
     border-radius: 10px;
-    box-shadow:2px 2px 0px orange;
+    border : 2px solid orange;
+    /* box-shadow:0px 0px 5px orange; */
     align-self: center;
 
 }
